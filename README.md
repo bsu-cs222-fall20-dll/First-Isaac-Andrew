@@ -25,3 +25,4 @@ Update History:
     -import java.io.Reader;
     -import java.net.;
     -import java.io.;
+- We got the idea to take the URL for wikipedias API request https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&list=&titles=fish&rvprop=ids%7Ctimestamp%7Cflags%7Ccomment%7Cuser&rvlimit=10 to insert the input into the link and pass it to the API fetcher
