@@ -28,3 +28,4 @@ Update History:
 - We got the idea to take the URL for wikipedias API request https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&list=&titles=fish&rvprop=ids%7Ctimestamp%7Cflags%7Ccomment%7Cuser&rvlimit=10 to insert the input into the link and pass it to the API fetcher
 - We use the URLConnection class from java.net to connect to the wikipedias api to make the request
 - We added replace character to make the console output more readable
+- We added testing for a variety of different things
