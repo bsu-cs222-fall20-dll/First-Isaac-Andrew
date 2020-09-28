@@ -29,3 +29,4 @@ Update History:
 - We use the URLConnection class from java.net to connect to the wikipedias api to make the request
 - We added replace character to make the console output more readable
 - We added testing for a variety of different things
+- Fixed the userinput to allow multiple words in the title without error
