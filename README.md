@@ -30,6 +30,7 @@ Update History:
 - We added replace character to make the console output more readable(replacing "{","}", and ",")
 - We added testing for a variety of different things
 - Fixed the userinput to allow multiple words in the title without error(program use to fail if the user added any spaces to the input, it now handles them)
+- Fixed the api request link to allow for redirects
 
 
 Problems and Issues:
