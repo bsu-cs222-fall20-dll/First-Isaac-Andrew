@@ -10,7 +10,7 @@ public class UserInput
         Scanner UserInput = new Scanner(System.in);
         System.out.println("Please enter wikipedia page title: ");
 
-        String PageTitle = UserInput.nextLine();
+        String PageTitle = (UserInput.nextLine()).replace(" ", "%20");
         System.out.println("Searching for: " + PageTitle);
         ApiFetch userRequest = new ApiFetch(PageTitle);
     }
