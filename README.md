@@ -30,3 +30,7 @@ Update History:
 - We added replace character to make the console output more readable(replacing "{","}", and ",")
 - We added testing for a variety of different things
 - Fixed the userinput to allow multiple words in the title without error(program use to fail if the user added any spaces to the input, it now handles them)
+
+
+Problems and Issues:
+- When pressing commit in intellij, we didn't realize it was not actually committing and we had to find a work around by uploading the file through gihtub
