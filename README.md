@@ -14,8 +14,8 @@ Build Instructions:
 
 Update History:
 - Added user input
-- Imported Scanner
-- Created API Fetcher class
+- Imported Java.Util.Scanner class to use for the input method
+- Created "APIFetcher" class
 - Imported 
     -import com.google.gson.JsonElement;
     -import com.google.gson.JsonObject;
