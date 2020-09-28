@@ -1,4 +1,9 @@
 package edu.bsu.cs222.WikipediaProject;
 
-public class Testing {
+import org.junit.Test;
+
+public class Testing
+{
+    @Test
+    
 }
