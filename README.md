@@ -10,6 +10,7 @@ Build Instructions:
 - jdk 14
 - Junit 4.12
 - Gson 2.8.6
+- JavaFx 13.0.2
 
 
 Update History:
