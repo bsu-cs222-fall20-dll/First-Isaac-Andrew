@@ -19,9 +19,22 @@ public class ApiFetch
         BufferedReader in = new BufferedReader(new InputStreamReader(WikiAPIFetchRequest.getInputStream()));
 
         String inputLine;
-        while ((inputLine = in.readLine()) != null)
+
+        while ((inputLine = in.readLine()) != null) {
+            String CleanedUpDisplay = ((inputLine.replace('{','\n')).replace('}','\n')).replace(',','\n');
+
             //Replacing char's with \n to break up output and maje more readable
-            System.out.println( ((inputLine.replace('{','\n')).replace('}','\n')).replace(',','\n') );
+            if (CleanedUpDisplay.contains("-1") && CleanedUpDisplay.contains("missing"))
+            {
+                System.out.println("The page you searched for does not exist or could not be found");
+            }
+            else
+            {
+                System.out.println(CleanedUpDisplay);
+            }
+        }
+
+
         in.close();
 
         JsonStreamParser OutputParser = new JsonStreamParser(in);
