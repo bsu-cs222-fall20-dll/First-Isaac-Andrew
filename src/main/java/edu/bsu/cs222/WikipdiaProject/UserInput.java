@@ -64,5 +64,6 @@ public class UserInput
         //System.out.println("Searching for: " + PageTitle);
         //ApiFetch userRequest = new ApiFetch(PageTitle);
         InputGui test1 = new InputGui();
+
     }
 }
