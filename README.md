@@ -11,6 +11,16 @@ Build Instructions:
 - Junit 4.12
 - Gson 2.8.6
 - JavaFx 13.0.2
+- import javax.swing.*;
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.net.URL;
+-import java.net.URLConnection;
+-import javax.swing.*;
+-import java.awt.event.ActionEvent;
+-import java.awt.event.ActionListener;
+-import java.io.IOException;
 
 
 Update History:
@@ -32,8 +42,12 @@ Update History:
 - We added testing for a variety of different things
 - Fixed the userinput to allow multiple words in the title without error(program use to fail if the user added any spaces to the input, it now handles them)
 - Fixed the api request link to allow for redirects
--added ability to handle missing/nonexistant pages
+- added ability to handle missing/nonexistant pages
+-Java FX wouldnt work so we used JFrame to create the java
+- made a Jframe to enter in the search
 
 
 Problems and Issues:
 - When pressing commit in intellij, we didn't realize it was not actually committing and we had to find a work around by uploading the file through gihtub(RESOLVED)
+- Intelij says javaFX is no longer supported, tried various methods to try and inport it and to get it to work but none did for us, had to use Jframe as a workaround so that we still would have a gui.
+- Jpanel will not create a second window to display the outputs
