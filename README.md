@@ -33,6 +33,8 @@ Update History:
 - Fixed the userinput to allow multiple words in the title without error(program use to fail if the user added any spaces to the input, it now handles them)
 - Fixed the api request link to allow for redirects
 -added ability to handle missing/nonexistant pages
+-Java FX wouldnt work so we used JFrame to create the java
+-made a Jframe to enter in the search
 
 
 Problems and Issues:
