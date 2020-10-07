@@ -1,12 +1,12 @@
 package edu.bsu.cs222.WikipdiaProject;
 
-import com.google.gson.*;
+import com.google.gson.JsonStreamParser;
 
-import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.*;
-import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class ApiFetch
 {
@@ -18,12 +18,14 @@ public class ApiFetch
         URLConnection WikiAPIFetchRequest = UrlToFetch.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(WikiAPIFetchRequest.getInputStream()));
 
+
         String inputLine;
 
         while ((inputLine = in.readLine()) != null) {
+            //Replacing char's with \n to break up output and maje more readable
             String CleanedUpDisplay = ((inputLine.replace('{','\n')).replace('}','\n')).replace(',','\n');
 
-            //Replacing char's with \n to break up output and maje more readable
+            //the return from wikipedia's API states -1 missing on pages that don't exist, allows to ID nonexitant pages
             if (CleanedUpDisplay.contains("-1") && CleanedUpDisplay.contains("missing"))
             {
                 System.out.println("The page you searched for does not exist or could not be found");
