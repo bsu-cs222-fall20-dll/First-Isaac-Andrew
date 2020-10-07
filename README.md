@@ -40,3 +40,4 @@ Update History:
 Problems and Issues:
 - When pressing commit in intellij, we didn't realize it was not actually committing and we had to find a work around by uploading the file through gihtub(RESOLVED)
 - Intelij says javaFX is no longer supported, tried various methods to try and inport it and to get it to work but none did for us, had to use Jframe as a workaround so that we still would have a gui.
+- Jpanel will not create a second window to display the outputs
