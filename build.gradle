@@ -26,4 +26,4 @@ javafx
             modules = [ 'javafx.controls', 'javafx.fxml' ]
             version = '13.0.2'
         }
-mainClassName = 'UserInput'
+mainClassName = 'edu.bsu.cs222.WikipdiaProject.Main'

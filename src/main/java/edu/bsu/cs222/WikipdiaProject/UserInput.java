@@ -10,7 +10,6 @@ public class UserInput
     public static class InputGui extends JFrame
     {
         JPanel jp = new JPanel();
-        JLabel jl = new JLabel();
         JTextField jt = new JTextField(30);
         JButton jb = new JButton("Enter");
 
@@ -29,7 +28,7 @@ public class UserInput
                 public void actionPerformed(ActionEvent e)
                 {
                     String input = jt.getText();
-                    jl.setText(input);
+
                 }
             });
 
@@ -39,7 +38,7 @@ public class UserInput
                 public void actionPerformed(ActionEvent e)
                 {
                     String STRInput = jt.getText();
-                    jl.setText(STRInput);
+
                     //Intellij forced the Try catch statement and would not allow it without one
                     try {
                         ApiFetch FetchUserInput = new ApiFetch(STRInput.replace(" ", "%20"));
@@ -50,7 +49,7 @@ public class UserInput
                 }
             });
 
-            jp.add(jl);
+            jp.add(jt);
             add(jp);
 
         }
