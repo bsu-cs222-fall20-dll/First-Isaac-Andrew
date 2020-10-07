@@ -40,6 +40,7 @@ public class UserInput
                 {
                     String STRInput = jt.getText();
                     jl.setText(STRInput);
+                    //Intellij forced the Try catch statement and would not allow it without one
                     try {
                         ApiFetch FetchUserInput = new ApiFetch(STRInput.replace(" ", "%20"));
                     } catch (IOException ioException) {
@@ -57,12 +58,6 @@ public class UserInput
     }
 
     public static void main(String[] args) throws IOException {
-        //Scanner UserInput = new Scanner(System.in);
-        //System.out.println("Please enter wikipedia page title: ");
-
-        //String PageTitle = (UserInput.nextLine()).replace(" ", "%20");
-        //System.out.println("Searching for: " + PageTitle);
-        //ApiFetch userRequest = new ApiFetch(PageTitle);
         InputGui test1 = new InputGui();
 
     }
