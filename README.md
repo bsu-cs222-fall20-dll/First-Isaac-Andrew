@@ -53,6 +53,7 @@ Update History:
 - got the display able to display the results from the API search
 - made the text smaller in an attempt to get it all to fit
 - was able to implement JavaFX's scroll pannel method to fix display issues
+- streamlined alot of the code, removing unused and/or unessecary sections
 
 
 Problems and Issues:
