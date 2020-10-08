@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application implements EventHandler<ActionEvent>
 {
     TextField UserInput;
@@ -20,20 +22,26 @@ public class Main extends Application implements EventHandler<ActionEvent>
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        VBox parent = new VBox();
+        //VBox parent = new VBox();
         primaryStage.setTitle("Wikipedia API Search");
         Search = new Button();
         Search.setText("Click to search");
         Search.setOnAction(this);
+        Search.setLayoutX(50);
+        Search.setLayoutY(500);
+        Search.setStyle("-fx-border-color: #ff0000; -fx-border-width: 5px;");
 
         UserInput = new TextField();
         APIOutput = new Text();
+        UserInput.setLayoutX(50);
+        UserInput.setLayoutY(500);
 
         StackPane layout = new StackPane();
         layout.getChildren().add(Search);
         layout.getChildren().add(UserInput);
+        VBox box = new VBox(Search,UserInput,APIOutput);
 
-        Scene scene = new Scene(layout,500,550);
+        Scene scene = new Scene(box,500,550);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -45,7 +53,16 @@ public class Main extends Application implements EventHandler<ActionEvent>
     {
         if (event.getSource()==Search)
         {
-            System.out.println("Button Pressed");
+            try
+            {
+
+                ApiFetch JavaFXFetch = new ApiFetch(UserInput.getText());
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+            APIOutput.setText("This finally works");
         }
 
     }
