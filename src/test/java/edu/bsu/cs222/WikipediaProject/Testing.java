@@ -1,7 +1,6 @@
 package edu.bsu.cs222.WikipediaProject;
 
 import edu.bsu.cs222.WikipdiaProject.ApiFetch;
-import edu.bsu.cs222.WikipdiaProject.UserInput;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -35,7 +34,6 @@ public class Testing
         ApiFetch test1 = new ApiFetch("Ham");
         Assert.assertNotNull(test1);
     }
-
 
 
 

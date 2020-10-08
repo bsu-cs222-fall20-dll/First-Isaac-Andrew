@@ -1,8 +1,5 @@
 package edu.bsu.cs222.WikipdiaProject;
 
-import com.google.gson.JsonStreamParser;
-
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,32 +26,26 @@ public class ApiFetch
 
             //the return from wikipedia's API states -1 missing on pages that don't exist, allows to ID nonexitant pages
             if (CleanedUpDisplay.contains("-1") && CleanedUpDisplay.contains("missing")) {
-                System.out.println("The page you searched for does not exist or could not be found");
+                // code from iteration one, when un coomented it will print to the console as well
+                //System.out.println("The page you searched for does not exist or could not be found");
             } else {
                 CleanedUpDisplay = ((inputLine.replace('{', '\n')).replace('}', '\n')).replace(',', '\n');
-                System.out.println(CleanedUpDisplay);
+                //System.out.println(CleanedUpDisplay);
             }
         }
 
 
         in.close();
 
-        JsonStreamParser OutputParser = new JsonStreamParser(in);
 
-        JPanel DisplayResults = new JPanel();
-        DisplayResults.setVisible(true);
-        JTextArea TextDisplay = new JTextArea();
-        TextDisplay.setVisible(true);
-        DisplayResults.setSize(1000, 1000);
-        TextDisplay.setText(CleanedUpDisplay);
-        DisplayResults.add(TextDisplay);
 
 
 
 
     }
     public static String APIStringOutput(String s) throws IOException {
-        String UrlToSearch = ("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&list=&titles=" + s + "&redirects=1&rvprop=ids%7Ctimestamp%7Cflags%7Ccomment%7Cuser&rvlimit=20");
+        String sDespaced = s.replace(" ", "%20");
+        String UrlToSearch = ("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&list=&titles=" + sDespaced + "&redirects=1&rvprop=ids%7Ctimestamp%7Cflags%7Ccomment%7Cuser&rvlimit=20");
         URL UrlToFetch = new URL(UrlToSearch);
         URLConnection WikiAPIFetchRequest = UrlToFetch.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(WikiAPIFetchRequest.getInputStream()));
@@ -75,4 +66,6 @@ public class ApiFetch
         }
         return "No Connection";
     }
+
+
 }

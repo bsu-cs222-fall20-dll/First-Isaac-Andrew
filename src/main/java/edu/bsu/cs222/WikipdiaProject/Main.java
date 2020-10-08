@@ -24,14 +24,14 @@ public class Main extends Application implements EventHandler<ActionEvent>
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        //VBox parent = new VBox();
+        //Class for JavaFX settings
         primaryStage.setTitle("Wikipedia API Search");
         Search = new Button();
         Search.setText("Click to search");
         Search.setOnAction(this);
         Search.setLayoutX(50);
         Search.setLayoutY(500);
-        Search.setStyle("-fx-border-color: #ff0000; -fx-border-width: 5px;");
+        //Search.setStyle("-fx-border-color: #ff0000; -fx-border-width: 5px;");
 
         UserInput = new TextField();
         APIOutput = new Text();
@@ -66,7 +66,7 @@ public class Main extends Application implements EventHandler<ActionEvent>
             try
             {
 
-                ApiFetch JavaFXFetch = new ApiFetch(UserInput.getText());
+                ApiFetch JavaFXFetch = new ApiFetch(UserInput.getText().replace(" ", "%20"));
                APIOutput.setText(JavaFXFetch.APIStringOutput(UserInput.getText()));
 
             }
@@ -74,7 +74,7 @@ public class Main extends Application implements EventHandler<ActionEvent>
             {
                 e.printStackTrace();
             }
-            //APIOutput.setText("This finally works");
+
         }
 
     }
