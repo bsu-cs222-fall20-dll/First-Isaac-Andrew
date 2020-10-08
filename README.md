@@ -45,6 +45,8 @@ Update History:
 - added ability to handle missing/nonexistant pages
 -Java FX wouldnt work so we used JFrame to create the java
 - made a Jframe to enter in the search
+- attempted to go back and rework to use JavaFX, quickly ran into a wall
+- tried some other solutions to try and get the output to be part of the GUI instead of just coming out of the console
 
 
 Problems and Issues:
