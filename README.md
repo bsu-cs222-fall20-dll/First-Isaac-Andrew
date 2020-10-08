@@ -60,3 +60,8 @@ Problems and Issues:
 - Intelij says javaFX is no longer supported, tried various methods to try and inport it and to get it to work but none did for us, had to use Jframe as a workaround so that we still would have a gui.(resolved)
 - Jpanel will not create a second window to display the outputs(Resolved,no longer using Jpannel)
 - On attempt to run, it will display "JavaFX runtime components are missing, and are required to run this application"(resolved)
+
+
+Suppressed Warning and error:
+- Intelij forces at several points for me to have a try catch statement, and then gives a warning that thses try cathes will never be used
+- Gradle wil' warn that I am using "Deprecated Gradle features", making it incompatible with Gradle 7.0, irrelevant since this program uses gradle 6.3
