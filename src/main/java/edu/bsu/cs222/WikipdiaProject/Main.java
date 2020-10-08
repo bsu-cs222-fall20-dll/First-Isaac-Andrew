@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -18,6 +19,7 @@ public class Main extends Application implements EventHandler<ActionEvent>
     TextField UserInput;
     Button Search;
     Text APIOutput;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -35,13 +37,21 @@ public class Main extends Application implements EventHandler<ActionEvent>
         APIOutput = new Text();
         UserInput.setLayoutX(50);
         UserInput.setLayoutY(500);
+        APIOutput.setStyle("-fx-font-size: 9.5pt;");
+        ScrollPane APIScroll = new ScrollPane();
+        APIScroll.setContent(APIOutput);
+        APIScroll.setPrefSize(500,500);
+        APIScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        APIScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+
+
 
         StackPane layout = new StackPane();
         layout.getChildren().add(Search);
         layout.getChildren().add(UserInput);
-        VBox box = new VBox(Search,UserInput,APIOutput);
+        VBox box = new VBox(Search,UserInput,APIScroll,APIOutput);
 
-        Scene scene = new Scene(box,500,550);
+        Scene scene = new Scene(box,500,575);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -57,12 +67,14 @@ public class Main extends Application implements EventHandler<ActionEvent>
             {
 
                 ApiFetch JavaFXFetch = new ApiFetch(UserInput.getText());
+               APIOutput.setText(JavaFXFetch.APIStringOutput(UserInput.getText()));
+
             }
             catch (IOException e)
             {
                 e.printStackTrace();
             }
-            APIOutput.setText("This finally works");
+            //APIOutput.setText("This finally works");
         }
 
     }

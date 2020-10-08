@@ -53,4 +53,26 @@ public class ApiFetch
 
 
     }
+    public static String APIStringOutput(String s) throws IOException {
+        String UrlToSearch = ("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&list=&titles=" + s + "&redirects=1&rvprop=ids%7Ctimestamp%7Cflags%7Ccomment%7Cuser&rvlimit=20");
+        URL UrlToFetch = new URL(UrlToSearch);
+        URLConnection WikiAPIFetchRequest = UrlToFetch.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(WikiAPIFetchRequest.getInputStream()));
+        String inputLine;
+
+        String CleanedUpDisplay = null;
+        while ((inputLine = in.readLine()) != null) {
+            //Replacing char's with \n to break up output and maje more readable
+            CleanedUpDisplay = ((inputLine.replace('{', '\n')).replace('}', '\n')).replace(',', '\n');
+
+            //the return from wikipedia's API states -1 missing on pages that don't exist, allows to ID nonexitant pages
+            if (CleanedUpDisplay.contains("-1") && CleanedUpDisplay.contains("missing")) {
+                return("The page you searched for does not exist or could not be found");
+            } else {
+                CleanedUpDisplay = ((inputLine.replace('{', '\n')).replace('}', '\n')).replace(',', '\n');
+                return(CleanedUpDisplay);
+            }
+        }
+        return "No Connection";
+    }
 }
