@@ -47,10 +47,16 @@ Update History:
 - made a Jframe to enter in the search
 - attempted to go back and rework to use JavaFX, quickly ran into a wall
 - tried some other solutions to try and get the output to be part of the GUI instead of just coming out of the console
+- got JavaFx working and was able then to create a window with the GUI
+- Input using JavaFX is not working
+- able to make output dispaly generic static text
+- got the display able to display the results from the API search
+- made the text smaller in an attempt to get it all to fit
+- was able to implement JavaFX's scroll pannel method to fix display issues
 
 
 Problems and Issues:
 - When pressing commit in intellij, we didn't realize it was not actually committing and we had to find a work around by uploading the file through gihtub(RESOLVED)
 - Intelij says javaFX is no longer supported, tried various methods to try and inport it and to get it to work but none did for us, had to use Jframe as a workaround so that we still would have a gui.(resolved)
-- Jpanel will not create a second window to display the outputs
-- On attempt to run, it will display "JavaFX runtime components are missing, and are required to run this application"
+- Jpanel will not create a second window to display the outputs(Resolved,no longer using Jpannel)
+- On attempt to run, it will display "JavaFX runtime components are missing, and are required to run this application"(resolved)
